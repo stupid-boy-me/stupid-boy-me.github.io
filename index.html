@@ -5,79 +5,152 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Huang Yiguo Portfolio</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f6f8fa;
-      color: #222;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    .hero {
-      background: white;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-      margin-bottom: 24px;
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 36px;
-    }
-    .subtitle {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .tags span {
-      display: inline-block;
-      background: #e8eefc;
-      color: #234;
-      padding: 6px 12px;
-      border-radius: 999px;
-      margin: 6px 8px 0 0;
-      font-size: 14px;
-    }
-    .section-title {
-      font-size: 26px;
-      margin: 32px 0 16px;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      background: white;
-      border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-    }
-    .card h3 {
-      margin-top: 0;
-      font-size: 20px;
-    }
-    .card p {
-      color: #555;
+      font-family: Arial, "Microsoft YaHei", sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
       line-height: 1.6;
     }
-    a.button {
-      display: inline-block;
-      margin-top: 12px;
-      text-decoration: none;
-      background: #24292f;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 10px;
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
     }
-    footer {
-      text-align: center;
-      color: #666;
-      margin-top: 40px;
+
+    .hero {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: 38px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+
+    .desc {
+      color: #374151;
+      margin-bottom: 18px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      background: #e8eefc;
+      color: #1e3a8a;
+      padding: 8px 14px;
+      border-radius: 999px;
       font-size: 14px;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin: 0 0 16px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 24px;
+    }
+
+    .muted {
+      color: #6b7280;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .video-wrap {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      margin: 18px 0 12px;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #000;
+    }
+
+    .video-note {
+      color: #4b5563;
+      font-size: 14px;
+    }
+
+    .project-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .project-list li {
+      margin-bottom: 8px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .mini-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .mini-card h4 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -86,47 +159,73 @@
     <section class="hero">
       <h1>Huang Yiguo</h1>
       <div class="subtitle">自动驾驶感知方向｜车道线感知｜量化部署｜训练验证</div>
-      <p>
-        聚焦车道线感知算法开发、时序稳定性优化、ONNX/INT8 量化部署、
+      <div class="desc">
+        聚焦车道线感知算法开发、几何后处理、时序平滑、ONNX/INT8 量化部署，
         以及基于 PyTorch / MMSegmentation 的训练与部署前验证。
-      </p>
+      </div>
+
       <div class="tags">
-        <span>Lane Detection</span>
-        <span>Temporal Smoothing</span>
-        <span>Geometry Postprocess</span>
-        <span>ONNX</span>
-        <span>PPQ</span>
-        <span>PyTorch</span>
+        <span class="tag">Lane Detection</span>
+        <span class="tag">Temporal Smoothing</span>
+        <span class="tag">Geometry Postprocess</span>
+        <span class="tag">ONNX</span>
+        <span class="tag">PPQ</span>
+        <span class="tag">PyTorch</span>
       </div>
     </section>
 
-    <h2 class="section-title">代表项目</h2>
-    <section class="cards">
+    <section class="section">
+      <h2>项目展示</h2>
+
       <div class="card">
         <h3>车道线感知算法开发与稳定性优化</h3>
-        <p>
-          围绕检测模型、几何后处理、时序平滑与问题闭环分析，
-          优化抖动、跳变与复杂场景不稳定问题。
-        </p>
-        <a class="button" href="#">查看详情</a>
-      </div>
+        <div class="muted">2025.01 - 2026.02</div>
 
-      <div class="card">
-        <h3>基于 ONNX 的车道线模型量化与部署优化</h3>
         <p>
-          搭建 PTQ 量化流程，完成 calibration、敏感层分析、
-          INT8 导出与量化掉点排查。
+          围绕检测模型、几何后处理、时序平滑与问题闭环分析链路，
+          优化抖动、跳变、遮挡、弯道和分叉场景下的检测稳定性。
         </p>
-        <a class="button" href="#">查看详情</a>
-      </div>
 
-      <div class="card">
-        <h3>基于 PyTorch 的语义分割模型训练与部署验证</h3>
-        <p>
-          搭建训练流程，优化数据增强、loss 与 profiling，
-          并完成 ONNX 导出和精度回归。
-        </p>
-        <a class="button" href="#">查看详情</a>
+        <div class="video-wrap">
+          <video controls preload="metadata" poster="./assets/images/lane_poster.jpg" playsinline>
+            <source src="./assets/videos/lane_demo.mp4" type="video/mp4" />
+            <source src="./assets/videos/lane_demo.webm" type="video/webm" />
+            你的浏览器不支持 HTML5 video。
+            你可以直接打开这个视频：
+            <a href="./assets/videos/lane_demo.mp4">lane_demo.mp4</a>
+          </video>
+        </div>
+
+        <div class="video-note">
+          上面这段视频可以放“优化前 / 优化后”的对比，例如左侧原始结果，右侧加入多帧滤波、卡尔曼滤波和异常剔除后的结果。
+        </div>
+
+        <ul class="project-list">
+          <li>参与车道线拟合、VP 点约束、曲线平滑、左右车道关联与规则后处理。</li>
+          <li>针对抖动、跳变与复杂场景不稳定，分析置信度波动、遮挡与场景突变来源。</li>
+          <li>引入多帧滤波、卡尔曼滤波、异常剔除、动态阈值与置信度融合策略。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>更多项目</h2>
+      <div class="grid">
+        <div class="mini-card">
+          <h4>ONNX / PPQ 量化部署优化</h4>
+          <p>
+            搭建 PTQ 流程，完成 calibration 数据链路、敏感层分析、
+            INT8 导出与量化掉点排查。
+          </p>
+        </div>
+
+        <div class="mini-card">
+          <h4>PyTorch / MMSeg 训练与验证</h4>
+          <p>
+            支持配置化训练、断点续训、指标评估、多实验管理、
+            ONNX 导出与部署前一致性验证。
+          </p>
+        </div>
       </div>
     </section>
 
