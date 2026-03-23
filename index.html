@@ -1,1 +1,138 @@
-<h1>欢迎来到我的主页！</h1>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huang Yiguo Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6f8fa;
+      color: #222;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .hero {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 36px;
+    }
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .tags span {
+      display: inline-block;
+      background: #e8eefc;
+      color: #234;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin: 6px 8px 0 0;
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 26px;
+      margin: 32px 0 16px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .card p {
+      color: #555;
+      line-height: 1.6;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      background: #24292f;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      color: #666;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Huang Yiguo</h1>
+      <div class="subtitle">自动驾驶感知方向｜车道线感知｜量化部署｜训练验证</div>
+      <p>
+        聚焦车道线感知算法开发、时序稳定性优化、ONNX/INT8 量化部署、
+        以及基于 PyTorch / MMSegmentation 的训练与部署前验证。
+      </p>
+      <div class="tags">
+        <span>Lane Detection</span>
+        <span>Temporal Smoothing</span>
+        <span>Geometry Postprocess</span>
+        <span>ONNX</span>
+        <span>PPQ</span>
+        <span>PyTorch</span>
+      </div>
+    </section>
+
+    <h2 class="section-title">代表项目</h2>
+    <section class="cards">
+      <div class="card">
+        <h3>车道线感知算法开发与稳定性优化</h3>
+        <p>
+          围绕检测模型、几何后处理、时序平滑与问题闭环分析，
+          优化抖动、跳变与复杂场景不稳定问题。
+        </p>
+        <a class="button" href="#">查看详情</a>
+      </div>
+
+      <div class="card">
+        <h3>基于 ONNX 的车道线模型量化与部署优化</h3>
+        <p>
+          搭建 PTQ 量化流程，完成 calibration、敏感层分析、
+          INT8 导出与量化掉点排查。
+        </p>
+        <a class="button" href="#">查看详情</a>
+      </div>
+
+      <div class="card">
+        <h3>基于 PyTorch 的语义分割模型训练与部署验证</h3>
+        <p>
+          搭建训练流程，优化数据增强、loss 与 profiling，
+          并完成 ONNX 导出和精度回归。
+        </p>
+        <a class="button" href="#">查看详情</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Huang Yiguo
+    </footer>
+  </div>
+</body>
+</html>
